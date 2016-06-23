@@ -55,6 +55,7 @@ import net.opengis.wps.x100.ProcessDescriptionType;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringEscapeUtils;
 import org.n52.wps.commons.XMLUtil;
 import org.n52.wps.io.BasicXMLTypeFactory;
 import org.n52.wps.io.IOHandler;
@@ -563,7 +564,9 @@ public class InputHandler {
 
          protected IData parseComplexValue(String formatEncoding, String complexValue, String dataMimeType, String formatSchema, IParser parser) throws ExceptionReport {
              IData idata;
-             String complexValueCopy = complexValue.toString();
+//             String complexValueCopy = complexValue.toString();
+             String complexValueCopy = StringEscapeUtils.unescapeXml(complexValue);
+             
              // encoding is UTF-8 (or nothing and we default to UTF-8)
 		// everything that goes to this condition should be inline xml data
 		if (StringUtils.isBlank(formatEncoding) || formatEncoding.equalsIgnoreCase(IOHandler.DEFAULT_ENCODING)){

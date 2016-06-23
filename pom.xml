@@ -146,15 +146,16 @@
 					<excludes>
 						<exclude>**/LargeBufferStream.java</exclude>
 					</excludes>
+          <skip>true</skip>
 				</configuration>
-				<executions>
+				<!-- <executions>
 					<execution>
 						<phase>initialize</phase>
 						<goals>
 							<goal>check</goal>
 						</goals>
 					</execution>
-				</executions>
+				</executions> -->
 			</plugin>
 			<plugin>
 				<groupId>org.jasig.maven</groupId>
@@ -165,8 +166,9 @@
 						<param>misc/licenses/license-mappings.xml</param>
 					</licenseMapping>
 					<generateChildNotices>false</generateChildNotices>
+          <skip>true</skip>
 				</configuration>
-				<executions>
+				<!-- <executions>
 					<execution>
 						<id>check-licenses</id>
 						<phase>initialize</phase>
@@ -174,7 +176,7 @@
 							<goal>check</goal>
 						</goals>
 					</execution>
-				</executions>
+				</executions> -->
 			</plugin>
 		</plugins>
 	</build>
@@ -805,7 +807,12 @@
                 <artifactId>cors-filter</artifactId>
                 <version>1.9.3</version>
             </dependency>
-        </dependencies>
+            <dependency>
+              <groupId>org.apache.commons</groupId>
+              <artifactId>commons-lang3</artifactId>
+              <version>3.4</version>
+            </dependency>
+		</dependencies>
     </dependencyManagement>
 	<reporting>
 		<plugins>

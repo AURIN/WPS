@@ -160,6 +160,11 @@
             <artifactId>cors-filter</artifactId>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+          <groupId>org.mccaughey</groupId>
+          <artifactId>walkability</artifactId>
+          <version>0.2.13-SNAPSHOT</version>
+        </dependency>
 	</dependencies>
 
 	<properties>

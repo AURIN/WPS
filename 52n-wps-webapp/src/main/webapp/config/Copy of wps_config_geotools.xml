@@ -5,22 +5,34 @@
 		<ParserList>
 			<Parser name="GML3BasicParser"
 				className="org.n52.wps.io.datahandler.parser.GML3BasicParser"
-				active="true">
+				active="false">
 				<Format mimetype="text/xml"
 					schema="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd" />
+				<Format mimetype="text/xml"
+					schema="http://schemas.opengis.net/gml/3.1.0/base/gml.xsd" />
+				<Format mimetype="text/xml"
+					schema="http://schemas.opengis.net/gml/3.0.1/base/gml.xsd" />
+				<Format mimetype="text/xml"
+					schema="http://schemas.opengis.net/gml/3.0.0/base/gml.xsd" />
+				<Format mimetype="text/xml; subtype=gml/3.0.0"
+					schema="http://schemas.opengis.net/gml/3.0.0/base/gml.xsd" />
+				<Format mimetype="text/xml; subtype=gml/3.0.1"
+					schema="http://schemas.opengis.net/gml/3.0.1/base/gml.xsd" />
+				<Format mimetype="text/xml; subtype=gml/3.1.0"
+					schema="http://schemas.opengis.net/gml/3.1.0/base/gml.xsd" />
 				<Format mimetype="text/xml; subtype=gml/3.1.1"
 					schema="http://schemas.opengis.net/gml/3.1.1/base/gml.xsd" />
 			</Parser>
 			<Parser name="GML32BasicParser"
-				className="org.n52.wps.io.datahandler.parser.GML32BasicParser" active="false">
+				className="org.n52.wps.io.datahandler.parser.GML32BasicParser" active="true">
 				<Format mimetype="text/xml"
-					schema="http://schemas.opengis.net/gml/3.2.1/base/feature.xsd" />
+					schema="http://schemas.opengis.net/gml/3.2.1/gml.xsd" />
 				<Format mimetype="text/xml; subtype=gml/3.2.1"
-					schema="http://schemas.opengis.net/gml/3.2.1/base/feature.xsd" />
+					schema="http://schemas.opengis.net/gml/3.2.1/gml.xsd" />
 			</Parser>
 			<Parser name="SimpleGMLParser"
 				className="org.n52.wps.io.datahandler.parser.SimpleGMLParser"
-				active="false">
+				active="true">
 				<Format mimetype="text/xml"
 					schema="http://www.opengeospatial.org/gmlpacket.xsd" />
 				<Format mimetype="text/xml"
@@ -30,7 +42,7 @@
 			</Parser>
 			<Parser name="GML2BasicParser"
 				className="org.n52.wps.io.datahandler.parser.GML2BasicParser"
-				active="false">
+				active="true">
 				<Format mimetype="text/xml"
 					schema="http://schemas.opengis.net/gml/2.1.2.1/feature.xsd" />
 				<Format mimetype="text/xml"
@@ -50,7 +62,7 @@
 			</Parser>
 			<Parser name="GML2BasicParser4Files"
 				className="org.n52.wps.io.datahandler.parser.GML2BasicParser4Files"
-				active="false">
+				active="true">
 				<Format mimetype="text/xml"
 					schema="http://schemas.opengis.net/gml/2.1.2.1/feature.xsd" />
 				<Format mimetype="text/xml"
@@ -257,7 +269,7 @@
 			<Parser name="GTBinZippedWKT64Parser"
 				className="org.n52.wps.io.datahandler.parser.GTBinZippedWKT64Parser"
 				active="true">
-				<Format mimetype="application/x-zipped-wkt" encoding="base64"/>
+				<Format mimetype="application/x-zipped-wkt" encoding="Base64"/>
 			</Parser>
 
 			<Parser name="WCPSQueryParser"
@@ -605,12 +617,7 @@
 		</Repository>
 		<Repository name="LocalAlgorithmRepository"
 			className="org.n52.wps.server.LocalAlgorithmRepository" active="true">
-      <Property name="Algorithm" active="true">au.org.aurin.wps.networkcatchment.NeighbourhoodGeneratorWPS</Property>
-      <Property name="Algorithm" active="true">au.org.aurin.wps.networkcatchment.ConnectivityWPS</Property>
-      <Property name="Algorithm" active="true">au.org.aurin.wps.networkcatchment.LandUseMixWPS</Property>
-      <Property name="Algorithm" active="true">au.org.aurin.wps.networkcatchment.GrossDwellingDensityWPS</Property>
-      <Property name="Algorithm" active="true">au.org.aurin.wps.networkcatchment.NettDwellingDensityWPS</Property>
-      <Property name="Algorithm" active="true">au.org.aurin.wps.networkcatchment.ZScoreWPS</Property>
+      <Property name="Algorithm" active="true">au.org.aurin.wps.walkability.NeighbourhoodGeneratorWPS</Property>
 			<Property name="Algorithm" active="true">org.n52.wps.server.algorithm.SimpleBufferAlgorithm</Property>
 			<Property name="Algorithm" active="true">org.n52.wps.server.algorithm.JTSConvexHullAlgorithm</Property>
 			<Property name="Algorithm" active="true">org.n52.wps.server.algorithm.coordinatetransform.CoordinateTransformAlgorithm</Property>
@@ -620,20 +627,26 @@
 			<Property name="Algorithm" active="true">org.n52.wps.server.algorithm.raster.AddRasterValues</Property>
 			<Property name="Algorithm" active="true">org.n52.wps.server.algorithm.spatialquery.IntersectsAlgorithm</Property>
 			<Property name="Algorithm" active="true">org.n52.wps.server.algorithm.spatialquery.TouchesAlgorithm</Property>
+			<Property name="Algorithm" active="true">org.n52.wps.server.algorithm.test.DummyTestClass</Property>
+			<Property name="Algorithm" active="true">org.n52.wps.server.algorithm.test.LongRunningDummyTestClass</Property>
+			<Property name="Algorithm" active="true">org.n52.wps.server.algorithm.test.MultipleComplexInAndOutputsDummyTestClass</Property>
+			<Property name="Algorithm" active="true">org.n52.wps.server.algorithm.test.MultiReferenceInputAlgorithm</Property>
+			<Property name="Algorithm" active="true">org.n52.wps.server.algorithm.test.MultiReferenceBinaryInputAlgorithm</Property>
+			<Property name="Algorithm" active="true">org.n52.wps.server.algorithm.test.EchoProcess</Property>
 		</Repository>
 		<Repository name="UploadedAlgorithmRepository"
 			className="org.n52.wps.server.UploadedAlgorithmRepository" active="false">
 		</Repository>
 		<Repository name="GrassRepository"
-			className="org.n52.wps.server.grass.GrassProcessRepository" active="true">
-			<Property name="Grass_Home" active="true">/usr/lib/grass64</Property>
-			<Property name="Python_Home" active="true">/usr/lib/python2.7</Property>
-			<Property name="Python_Path" active="true">/usr/lib/python2.7</Property>
-			<Property name="ModuleStarter_Home" active="false">C:\grass\wps-grass-bridge2\gms\</Property>
-			<Property name="GISRC_Dir" active="false">c:\programme\GRASS 7.0.svn\demolocation\.grassrc70</Property>
-			<Property name="TMP_Dir" active="true">/tmp</Property>
+			className="org.n52.wps.server.grass.GrassProcessRepository" active="false">
+			<Property name="Grass_Home" active="true">c:\programme\GRASS 7.0.svn</Property>
+			<Property name="Python_Home" active="true">c:\python25</Property>
+			<Property name="Python_Path" active="true">c:\python25</Property>
+			<Property name="ModuleStarter_Home" active="true">C:\grass\wps-grass-bridge2\gms\</Property>
+			<Property name="GISRC_Dir" active="true">c:\programme\GRASS 7.0.svn\demolocation\.grassrc70</Property>
+			<Property name="TMP_Dir" active="true">C:\tmp\grass_tmp</Property>
 			<Property name="Algorithm" active="true">i.atcorr</Property>
-<!-- 			<Property name="Algorithm" active="true">i.biomass</Property>
+			<Property name="Algorithm" active="true">i.biomass</Property>
 			<Property name="Algorithm" active="true">i.cca</Property>
 			<Property name="Algorithm" active="true">i.cluster</Property>
 			<Property name="Algorithm" active="true">i.eb.eta</Property>
@@ -848,7 +861,7 @@
 			<Property name="Algorithm" active="true">v.type</Property>
 			<Property name="Algorithm" active="true">v.univar</Property>
 			<Property name="Algorithm" active="true">v.vol.rst</Property>
-			<Property name="Algorithm" active="true">v.voronoi</Property> -->
+			<Property name="Algorithm" active="true">v.voronoi</Property>
 		</Repository>
 		<!-- <Repository name="GeotoolsProcessRepository" className="org.n52.wps.geotools.GeotoolsProcessRepository" 
 			active="false"> </Repository> -->
@@ -1130,7 +1143,7 @@
   </AlgorithmRepositoryList>
 	<RemoteRepositoryList />
 	
-	<Server protocol="http" hostname="localhost" hostport="58080"
+	<Server protocol="http" hostname="localhost" hostport="8080"
 		includeDataInputsInResponse="false" computationTimeoutMilliSeconds="5"
 		cacheCapabilites="false" webappPath="wps" repoReloadInterval="0" maxPoolSize="20" keepAliveSeconds="1000" maxQueuedTasks="100" minPoolSize="10">
 		<!-- Setting to 'true' will enable filtering of responses documents.  Any server URL in
